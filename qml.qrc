@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/play_arrow-24px.svg</file>
+        <file>icons/stop-24px.svg</file>
+        <file>qml/main.qml</file>
+        <file>qml/SpectraChart.qml</file>
+        <file>qml/ConnectionDialog.qml</file>
+    </qresource>
+</RCC>
