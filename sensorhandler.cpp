@@ -125,18 +125,15 @@ void SensorHandler::initStateMachine()
 {
     qDebug() << Q_FUNC_INFO;
 
-    stateNotConnected = new QState();
-    stateMachine.addState(stateNotConnected);
+    stateNotConnected = new QState(&stateMachine);
     stateNotConnected->assignProperty(this, "state", "notConnected");
     connect(stateNotConnected, &QState::entered, this, &SensorHandler::onStateNotConnectedEntered);
 
-    stateIdle = new QState();
-    stateMachine.addState(stateIdle);
+    stateIdle = new QState(&stateMachine);
     stateIdle->assignProperty(this, "state", "idle");
     connect(stateIdle, &QState::entered, this, &SensorHandler::onStateIdleEntered);
 
-    stateMeasuring = new QState();
-    stateMachine.addState(stateMeasuring);
+    stateMeasuring = new QState(&stateMachine);
     stateMeasuring->assignProperty(this, "state", "measuring");
     connect(stateMeasuring, &QState::entered, this, &SensorHandler::onStateMeasuringEntered);
 
